@@ -3,7 +3,7 @@ Work with MongoDB and MySQL through the simple connector.
 
 ## Installation
 ```
-npm install @hqdaemon/db
+npm i @hqdaemon/db
 ```
 
 ## Usage
