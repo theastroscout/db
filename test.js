@@ -6,7 +6,7 @@ const init = async () => {
 		type: "mongo"
 	});
 	console.log(mongo);
-	mongo.close();
+	mongo.client.close();
 
 	let mysql = await hqDB({
 		type: "mysql",
