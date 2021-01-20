@@ -14,15 +14,15 @@ let db = await hqDB(options);
 ```
 
 ## Options
-Field | Value
--- | --
-type | string "mongo" or "mysql"
-database | string "DB_NAME"
-host | string (default "localhost")
-port | int (MongoDB default 27017)
-connectionLimit | int (MySQL default 5)
-user | string
-password | string
+Field | Type | Value
+-- | -- | --
+type | string | "mongo" or "mysql"
+database | string | "DB_NAME"
+host | string | default "localhost"
+port | int  | MongoDB default 27017, MySQL not use
+connectionLimit | int | MongoDB not use, MySQL default 5
+user | string | default ""
+password | string | default ""
 
 <br/>
 <br/>
@@ -33,13 +33,20 @@ let options = {
 	type: "mongo"
 };
 
-let mongo = await hqDB(options);
-// Return MongoClient
+let mongodb = await hqDB(options);
+/*
+Object {
+	server: MongoServer,
+	client: MongoClient,
+	ObjectID: mongodb.ObjectID
+}
+*/
 ```
 
 ### Base methods
 See full documentation on [MongoDB](https://www.npmjs.com/package/mongodb)
 ```js
+let mongo = mongodb.client;
 let db = await mongo.db("DB_NAME");
 let collection = await db.collection("COLLECTION_NAME");
 let resultOn = await collection.findOne({});
