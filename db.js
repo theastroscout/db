@@ -1,5 +1,18 @@
+/*
+
+DB Module
+
+*/
+
 (() => {
-	var db = async function(options){
+
+	/*
+
+	DB Object
+
+	*/
+	
+	let db = async options => {
 		if(options === undefined || options === null){
 			return db._error("Options is not specified");
 		}
@@ -17,9 +30,17 @@
 
 		return db._error(`"${options.type}" is not presented in this package.`);
 	};
+
 	db.types = {};
+
+	/*
+
+	MongoDB
+
+	*/
+
 	db.types.mongo = {
-		init: async (options) => {
+		init: async options => {
 			options.host = options.host || "localhost";
 			options.port = options.port || 27017;
 			let mongodb = require("mongodb");
@@ -39,8 +60,15 @@
 		}
 	};
 
+	/*
+
+	MySQL
+
+	*/
+
 	db.types.mysql = {
-		init: (options) => {
+
+		init: options => {
 			options.host = options.host || "localhost";
 			if(options.user === undefined || options.user === null){
 				return db._error("User is not specified");
@@ -69,6 +97,13 @@
 
 			return options;
 		},
+
+		/*
+
+		MySQL Query
+
+		*/
+
 		query: function(query, options, cb){
 			if(options === undefined || options === null){
 				options = [];
@@ -132,6 +167,12 @@
 		}
 	}
 
+	/*
+
+	Send Error
+
+	*/
+
 	db._error = (msg) => {
 		if(process.env.test !== undefined && process.env.test !== null){
 			throw new Error(msg);
@@ -142,4 +183,5 @@
 	};
 
 	module.exports = db;
+
 })();
