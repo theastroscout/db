@@ -1,7 +1,6 @@
 /*
 
 DB Module
-MongoDB and MySQL
 
 */
 
@@ -41,23 +40,13 @@ MongoDB and MySQL
 	*/
 
 	db.types.mongo = {
-
-		/*
-
-		Initialisation
-
-		*/
-
 		init: async options => {
-
 			options.host = options.host || "localhost";
 			options.port = options.port || 27017;
-
 			let mongodb = require("mongodb");
 			var MongoClient = mongodb.MongoClient;
 			var MongoServer = mongodb.Server;
 			let server = new MongoServer(options.host, options.port);
-			
 			let mongo = await MongoClient.connect(server);
 			if(!mongo){
 				return db._error(`Connot connect to MongoDB with ${options.host}:${options.port}`);
@@ -66,7 +55,13 @@ MongoDB and MySQL
 			return {
 				client: mongo,
 				server: server,
-				ObjectID: mongodb.ObjectID
+				ObjectID: mongodb.ObjectID,
+				DBRef: mongodb.DBRef,
+				Double: mongodb.Double,
+				Int32: mongodb.Int32,
+				Long: mongodb.Long,
+				BSONRegExp: mongodb.BSONRegExp,
+				Decimal128: mongodb.Decimal128
 			};
 		}
 	};
