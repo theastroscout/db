@@ -35,11 +35,19 @@ let options = {
 
 let mongodb = await hqDB(options);
 /*
+
 Object {
 	server: MongoServer,
 	client: MongoClient,
-	ObjectID: mongodb.ObjectID
+	ObjectID: mongodb.ObjectID,
+	DBRef: mongodb.DBRef,
+	Double: mongodb.Double,
+	Int32: mongodb.Int32,
+	Long: mongodb.Long,
+	BSONRegExp: mongodb.BSONRegExp,
+	Decimal128: mongodb.Decimal128
 }
+
 */
 ```
 
