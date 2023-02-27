@@ -1,6 +1,6 @@
 {
-  "name": "@hqdaemon/db",
-  "version": "1.0.4",
+  "name": "@surfy/db",
+  "version": "1.0.0",
   "description": "Work with MongoDB and MySQL through the simple connector.",
   "main": "db.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hqdaemon/db.git"
+    "url": "git+https://github.com/theastroscout/db.git"
   },
   "keywords": [
     "db",
@@ -17,16 +17,16 @@
     "connector"
   ],
   "author": {
-    "name": "HQ",
-    "url": "https://hqmode.com"
+    "name": "Alexander Yermolenko",
+    "url": "https://surfy.one"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hqdaemon/db/issues"
+    "url": "https://github.com/theastroscout/db/issues"
   },
-  "homepage": "https://github.com/hqdaemon/db#readme",
+  "homepage": "https://github.com/theastroscout/db#readme",
   "dependencies": {
-    "mongodb": "^3.6.3",
-    "mysql2": "^2.2.5"
+    "mongodb": "5.1.0",
+    "mysql2": "3.1.2"
   }
 }
